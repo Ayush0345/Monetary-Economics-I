@@ -100,12 +100,17 @@ stoch_simul(order=1, irf=50, periods=200);
 
 figure(1);
 
-subplot(3, 2, 1); plot(oo_.irfs.y_e, 'r--', 'LineWidth', 2); title('Output (y)');
-subplot(3, 2, 2); plot(oo_.irfs.c_e, 'r--', 'LineWidth', 2); title('Consumption (c)');
-subplot(3, 2, 3); plot(oo_.irfs.inv_e, 'b--', 'LineWidth', 2); title('Investment (inv)');
-subplot(3, 2, 4); plot(oo_.irfs.n_e, 'b--', 'LineWidth', 2); title('Labor (n)');
-subplot(3, 2, 5); plot(oo_.irfs.r_e, 'g--', 'LineWidth', 2); title('Return on Capital (r)');
-subplot(3, 2, 6); plot(oo_.irfs.w_e, 'g--', 'LineWidth', 2); title('Wages (w)');
+subplot(3, 3, 1); plot(oo_.irfs.y_e, 'r--', 'LineWidth', 2); title('Output (y)');
+subplot(3, 3, 2); plot(oo_.irfs.c_e, 'r--', 'LineWidth', 2); title('Consumption (c)');
+subplot(3, 3, 3); plot(oo_.irfs.inv_e, 'b--', 'LineWidth', 2); title('Investment (inv)');
+subplot(3, 3, 4); plot(oo_.irfs.n_e, 'b--', 'LineWidth', 2); title('Labor (n)');
+subplot(3, 3, 5); plot(oo_.irfs.r_e, 'g--', 'LineWidth', 2); title('Return on Capital (r)');
+subplot(3, 3, 6); plot(oo_.irfs.w_e, 'g--', 'LineWidth', 2); title('Wages (w)');
+subplot(3, 3, 7); plot(oo_.irfs.k_e, 'k--', 'LineWidth', 2); title('Capital (k)');
+subplot(3, 3, 8); plot(oo_.irfs.a_e, 'k--', 'LineWidth', 2); title('Technology (a)');
+subplot(3, 3, 9); plot(oo_.irfs.pi_e, 'k--', 'LineWidth', 2); title('Profit (pi)');
+
+
 
 // Part 4
 
@@ -115,29 +120,41 @@ figure(2);
 
 // Autocorrelation for each variable at 6 lags
 
-subplot(3, 2, 1); autocorr(oo_.endo_simul(strmatch('y', M_.endo_names, 'exact'),:), 6); title('Output (y)');
+subplot(3, 3, 1); autocorr(oo_.endo_simul(strmatch('y', M_.endo_names, 'exact'),:), 6); title('Output (y)');
 h = findobj(gca, 'Type', 'Line');
 set(h, 'Color', 'r', 'LineStyle', '--');
 
-subplot(3, 2, 2); autocorr(oo_.endo_simul(strmatch('c', M_.endo_names, 'exact'),:), 6); title('Consumption (c)');
+subplot(3, 3, 2); autocorr(oo_.endo_simul(strmatch('c', M_.endo_names, 'exact'),:), 6); title('Consumption (c)');
 h = findobj(gca, 'Type', 'Line');
 set(h, 'Color', 'r', 'LineStyle', '--');
 
-subplot(3, 2, 3); autocorr(oo_.endo_simul(strmatch('inv', M_.endo_names, 'exact'),:), 6); title('Investment (inv)');
+subplot(3, 3, 3); autocorr(oo_.endo_simul(strmatch('inv', M_.endo_names, 'exact'),:), 6); title('Investment (inv)');
 h = findobj(gca, 'Type', 'Line');
 set(h, 'Color', 'b', 'LineStyle', '--');
 
-subplot(3, 2, 4); autocorr(oo_.endo_simul(strmatch('n', M_.endo_names, 'exact'),:), 6); title('Labor (n)');
+subplot(3, 3, 4); autocorr(oo_.endo_simul(strmatch('n', M_.endo_names, 'exact'),:), 6); title('Labor (n)');
 h = findobj(gca, 'Type', 'Line');
 set(h, 'Color', 'b', 'LineStyle', '--');
 
-subplot(3, 2, 5); autocorr(oo_.endo_simul(strmatch('r', M_.endo_names, 'exact'),:), 6); title('Return on Capital (r)');
+subplot(3, 3, 5); autocorr(oo_.endo_simul(strmatch('r', M_.endo_names, 'exact'),:), 6); title('Return on Capital (r)');
 h = findobj(gca, 'Type', 'Line');
 set(h, 'Color', 'g', 'LineStyle', '--');
 
-subplot(3, 2, 6); autocorr(oo_.endo_simul(strmatch('w', M_.endo_names, 'exact'),:), 6); title('Wages (w)');
+subplot(3, 3, 6); autocorr(oo_.endo_simul(strmatch('w', M_.endo_names, 'exact'),:), 6); title('Wages (w)');
 h = findobj(gca, 'Type', 'Line');
 set(h, 'Color', 'g', 'LineStyle', '--');
+
+subplot(3, 3, 7); autocorr(oo_.endo_simul(strmatch('k', M_.endo_names, 'exact'),:), 6); title('Capital (k)');
+h = findobj(gca, 'Type', 'Line');
+set(h, 'Color', 'k', 'LineStyle', '--');
+
+subplot(3, 3, 8); autocorr(oo_.endo_simul(strmatch('a', M_.endo_names, 'exact'),:), 6); title('Technology (a)');
+h = findobj(gca, 'Type', 'Line');
+set(h, 'Color', 'k', 'LineStyle', '--');
+
+subplot(3, 3, 9); autocorr(oo_.endo_simul(strmatch('pi', M_.endo_names, 'exact'),:), 6); title('Profit (pi)');
+h = findobj(gca, 'Type', 'Line');
+set(h, 'Color', 'k', 'LineStyle', '--');
 
 // END
 
