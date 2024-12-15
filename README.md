@@ -6,4 +6,4 @@
 
 **Replication**: File named **draft_aj.mod** is the JPT replication code with the specified observables. Supplementary files include data **data_prep.m**, **model_data.m**, **draft_aj_mh_mode.m**, and **JPT.xlsx** which has the data for the estimation.
 
-**Term Paper**:
+**Term Paper**: File named **Term_Paper_Final** is the PDF for the term paper. The code associated with Bayesian Estimation for this paper is in the folder named **Term Paper** and the main code file is **finc.mod**.
