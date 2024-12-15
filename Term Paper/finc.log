@@ -1,0 +1,25 @@
+Starting Dynare (version 6.1).
+Calling Dynare with arguments: none
+Starting preprocessing of the model file ... 
+WARNING: finc.mod:381.1-19: The 'dynare_sensitivity' command is deprecated. It has been renamed 'sensitivity'. 
+Found 45 equation(s). 
+Evaluating expressions... 
+Computing static model derivatives (order 2). 
+Computing static model derivatives w.r.t. parameters (order 2). 
+Normalizing the static model... 
+Finding the optimal block decomposition of the static model... 
+18 block(s) found: 
+  17 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 28 equation(s) 
+                                 and 28 feedback variable(s). 
+Computing dynamic model derivatives (order 2). 
+Computing dynamic model derivatives w.r.t. parameters (order 2). 
+Normalizing the dynamic model... 
+Finding the optimal block decomposition of the dynamic model... 
+4 block(s) found: 
+  3 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 28 equation(s) 
+                                 and 24 feedback variable(s). 
+terminate called after throwing an instance of 'std::filesystem::__cxx11::filesystem_error' 
+  what():  filesystem error: cannot remove all: Access is denied [finc/model/bytecode] [finc/model/bytecode\block] 
+Preprocessing time: 0h00m02s.
